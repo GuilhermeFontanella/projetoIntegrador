@@ -1,0 +1,37 @@
+{
+  "produtos": [
+    {
+      "id": 1,
+      "nome": "Notebook LG Gram",
+      "fabricante": "LG Eletronicos",
+      "dataVencimento": "2021-10-12",
+      "dataFabricacao": "0043-03-31",
+      "lote": 54,
+      "quantidade": 350
+    },
+    {
+      "id": 5,
+      "nome": "iPhone 12 Pro",
+      "fabricante": "Apple",
+      "dataVencimento": "2021-12-27",
+      "dataFabricacao": "2021-09-29",
+      "lote": "100",
+      "quantidade": 20
+    },
+    {
+      "id": 6,
+      "nome": "iPhone 12 ",
+      "fabricante": "Apple",
+      "dataVencimento": "2021-08-05",
+      "dataFabricacao": "2021-10-27",
+      "lote": "10",
+      "quantidade": "100"
+    }
+  ],
+  "setores": [
+    {
+      "id": 0,
+      "nome": "Marketing"
+    }
+  ]
+}
