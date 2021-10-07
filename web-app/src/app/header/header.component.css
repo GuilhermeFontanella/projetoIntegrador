@@ -1,0 +1,13 @@
+
+header .title-group i {
+    padding-right: 5px;
+}
+
+.buttons-menu button {
+    margin: 10px;
+    
+}
+.buttons-menu {
+    width: 100%;
+    text-align: right;    
+}

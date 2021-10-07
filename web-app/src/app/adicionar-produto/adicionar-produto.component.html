@@ -1,0 +1,174 @@
+<div *ngIf="load">
+  <mat-progress-spinner
+  color="primary"
+  mode="indeterminate"></mat-progress-spinner>
+</div>
+<div class="container"  *ngIf="telaCadastro">
+    <mat-card>
+        <form [formGroup]="form" class="form" (ngSubmit)="salvar()">
+            <div class="row">
+              
+                <div class="col-sm">
+                    <mat-form-field>
+                        <mat-label>Nome do Produto</mat-label>
+                        <input matInput type="text" formControlName="nome">
+                          <mat-error *ngIf="form.controls.nome.hasError('required')">
+                            Nome do Produto é <strong>Obrigatório</strong>
+                          </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm">
+
+                    <mat-form-field>
+                        <mat-label>Fabricante</mat-label>
+                        <input matInput type="text" formControlName="fabricante">
+                          <mat-error *ngIf="form.controls.fabricante.hasError('required')">
+                            Nome do Fabricante do Produto é <strong>Obrigatório</strong>
+                          </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm">
+
+                    <mat-form-field>
+                        <mat-label>Data de Vencimento</mat-label>
+                        <input matInput type="date" formControlName="dataVencimento">
+                          <mat-error *ngIf="form.controls.dataVencimento.hasError('required')">
+                            A Data de Vencimento é <strong>Obrigatória</strong>
+                          </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm">
+
+                    <mat-form-field>
+                        <mat-label>Data de Fabricação</mat-label>
+                        <input matInput type="date" formControlName="dataFabricacao">
+                          <mat-error *ngIf="form.controls.dataFabricacao.hasError('required')">
+                            A Data de Fabricação é <strong>Obrigatória</strong>
+                          </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm">
+
+                    <mat-form-field>
+                        <mat-label>Lote</mat-label>
+                        <input matInput type="number" formControlName="lote">
+                          <mat-error *ngIf="form.controls.lote.hasError('required')">
+                            O Lote do Produto é <strong>Obrigatório</strong>
+                          </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm">
+
+                    <mat-form-field>
+                        <mat-label>Quantidade</mat-label>
+                        <input matInput type="number" formControlName="quantidade">
+                          <mat-error *ngIf="form.controls.quantidade.hasError('required')">
+                            A Quantidade do Produto é <strong>Obrigatória</strong>
+                          </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="buttons-form">
+                <button (click)="voltar()" type="button" mat-raised-button color="primary">
+                    Voltar
+                </button>
+                <button (click)="limpar()" type="button" mat-raised-button color="warn">
+                    Limpar
+                </button>
+                <button type="submit" mat-raised-button id="salvar">
+                    Salvar
+                </button>
+            </div>
+
+        </form>
+    </mat-card>
+</div>
+
+<div class="container" *ngIf="!telaCadastro">
+  <mat-card>
+      <form [formGroup]="formEdicao" class="form" (ngSubmit)="salvar()">
+          <div class="row">
+              <div class="col-sm">
+                  <mat-form-field>
+                      <mat-label>Nome do Produto</mat-label>
+                      <input matInput type="text" formControlName="nome">
+                        <mat-error *ngIf="formEdicao.controls.nome.hasError('required')">
+                          Nome do Produto é <strong>Obrigatório</strong>
+                        </mat-error>
+                  </mat-form-field>
+              </div>
+              <div class="col-sm">
+
+                  <mat-form-field>
+                      <mat-label>Fabricante</mat-label>
+                      <input matInput type="text" formControlName="fabricante">
+                        <mat-error *ngIf="formEdicao.controls.fabricante.hasError('required')">
+                          Nome do Fabricante do Produto é <strong>Obrigatório</strong>
+                        </mat-error>
+                  </mat-form-field>
+              </div>
+              <div class="col-sm">
+
+                  <mat-form-field>
+                      <mat-label>Data de Vencimento</mat-label>
+                      <input matInput type="date" formControlName="dataVencimento">
+                        <mat-error *ngIf="formEdicao.controls.dataVencimento.hasError('required')">
+                          A Data de Vencimento é <strong>Obrigatória</strong>
+                        </mat-error>
+                  </mat-form-field>
+              </div>
+              <div class="col-sm">
+
+                  <mat-form-field>
+                      <mat-label>Data de Fabricação</mat-label>
+                      <input matInput type="date" formControlName="dataFabricacao">
+                        <mat-error *ngIf="formEdicao.controls.dataFabricacao.hasError('required')">
+                          A Data de Fabricação é <strong>Obrigatória</strong>
+                        </mat-error>
+                  </mat-form-field>
+              </div>
+              <div class="col-sm">
+
+                  <mat-form-field>
+                      <mat-label>Lote</mat-label>
+                      <input matInput type="number" formControlName="lote">
+                      <mat-error *ngIf="formEdicao.controls.nome.hasError('minlength')">
+                          Digite um número com mais de 3 caracteres
+                        </mat-error>
+                        <mat-error *ngIf="formEdicao.controls.nome.hasError('maxlength')">
+                          O Lote do Produto não pode ter mais do que 50 caracteres
+                        </mat-error>
+                        <mat-error *ngIf="formEdicao.controls.nome.hasError('required')">
+                          O Lote do Produto é <strong>Obrigatório</strong>
+                        </mat-error>
+                  </mat-form-field>
+              </div>
+              <div class="col-sm">
+
+                  <mat-form-field>
+                      <mat-label>Quantidade</mat-label>
+                      <input matInput type="number" formControlName="quantidade">
+                        <mat-error *ngIf="formEdicao.controls.quantidade.hasError('maxlength')">
+                          A Quantidade do Produto não pode ter mais do que 50 caracteres
+                        </mat-error>
+                        <mat-error *ngIf="formEdicao.controls.quantidade.hasError('required')">
+                          A Quantidade do Produto é <strong>Obrigatória</strong>
+                        </mat-error>
+                  </mat-form-field>
+              </div>
+          </div>
+          <div class="buttons-form">
+              <button (click)="voltar()" mat-raised-button color="primary">
+                  Voltar
+              </button>
+              <button (click)="limpar()" mat-raised-button color="warn" disabled=true>
+                  Limpar
+              </button>
+              <button type="submit" mat-raised-button id="salvar">
+                  Salvar
+              </button>
+          </div>
+
+      </form>
+  </mat-card>
+</div>
